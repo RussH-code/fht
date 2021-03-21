@@ -30,9 +30,6 @@ def write_alignment(aln_dict, outname):
 subA = subalignment(alignment, sys.argv[2])
 subB = subalignment(alignment, sys.argv[3])
 
-write_alignment(subA, sys.argv[2] + "_subA")
-write_alignment(subB, sys.argv[3] + "_subB")
-
-#for seq in subA:
-#	print(seq + "\n" + subA[seq] + "\n")
+write_alignment(subA, sys.argv[2] + ".subalign")
+write_alignment(subB, sys.argv[3] + ".subalign")
 
