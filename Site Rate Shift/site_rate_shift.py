@@ -29,8 +29,8 @@ rate_a.drop(["Rate", "Cat", "C_Rate"], axis=1, inplace=True)
 rate_b.drop(["Rate", "Cat", "C_Rate"], axis=1, inplace=True)
 
 merged = pd.merge(rate_a, rate_b, how='left', on=['Site'])
-merged["Rate Shift Score"] = abs((merged['Rank_a'] - merged['Rank_b']))/len(merged)*100
+merged["score"] = abs((merged['Rank_a'] - merged['Rank_b']))/len(merged)*100
 merged.sort_values(by='Site', ignore_index=True)
 
-merged.to_csv(output, sep = '\t')
+merged.to_csv(output, sep = '\t', index=False)
 print("Output has been written to ", output)
