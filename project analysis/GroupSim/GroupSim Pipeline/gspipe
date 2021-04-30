@@ -1,0 +1,38 @@
+#!/bin/bash
+
+while getopts i:p:n:f:s: flag
+do
+    case "${flag}" in
+        i) inputfile=${OPTARG};;
+        p) prefix=${OPTARG};;
+        n) percentage=${OPTARG};;
+	f) firstgroup=${OPTARG};;
+	s) secondgroup=${OPTARG};;
+    esac
+done
+
+module load lang/r/4.0.3-bioconductor-gcc
+
+echo ""
+echo "Program start!"
+echo "-------------------------"
+echo "Putting taxa into speificity groups"
+python3 grouping.py -i $inputfile -p $prefix -f $firstgroup -s $secondgroup
+
+echo ""
+echo "-------------------------"
+echo "Calculating functional divergent sites"
+python3 group_sim_sdp.py -w 0 -n -c 0.9 -g 0.9 -m blosum62.bla -o ${prefix}.out ${prefix}_groupsim.fas euk bac
+
+echo "-------------------------"
+echo "Getting the $percentage % least divergent sites"
+Rscript filter.R ${prefix}.out $percentage
+
+echo ""
+echo "-------------------------"
+echo "Filtering $percentage % of the sites"
+module load lang/python/anaconda/3.7-2019.03.biopython
+python3 fd_site_filter.py -i $inputfile -s ${prefix}_lnfd${percentage}.txt -p ${prefix}_l
+python3 fd_site_filter.py -i $inputfile -s ${prefix}_mnfd${percentage}.txt -p ${prefix}_m
+
+rm temp.fas

@@ -1,0 +1,10 @@
+Thermotoga_maritima
+Bacillus_subtilis
+Synechocystis_PCC
+Campylobacter_jejuni
+Escherichia_coli
+Rickettsia_prowazekii
+Rhodopirellula_baltic
+Chlamydia_trachomatis
+Borrelia_burgdorferi
+Bacteroides_thetaiota

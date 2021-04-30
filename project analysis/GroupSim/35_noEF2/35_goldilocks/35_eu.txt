@@ -1,0 +1,10 @@
+Arabidopsis_tha
+Dictyostelium_dis
+Entamoeba_histolytica
+Homo_sapiens
+Leishmania_infant
+Plasmodium_falcip
+Saccharomyces_cerevis
+Tetrahymena_ther
+Thalassiosira_pseudo
+Trichomonas_vaginalis
