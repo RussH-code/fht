@@ -11,8 +11,6 @@ do
     esac
 done
 
-module load lang/r/4.0.3-bioconductor-gcc
-
 echo ""
 echo "Program start!"
 echo "-------------------------"
@@ -31,7 +29,6 @@ Rscript filter.R ${prefix}.out $percentage
 echo ""
 echo "-------------------------"
 echo "Filtering $percentage % of the sites"
-module load lang/python/anaconda/3.7-2019.03.biopython
 python3 fd_site_filter.py -i $inputfile -s ${prefix}_lnfd${percentage}.txt -p ${prefix}_l
 python3 fd_site_filter.py -i $inputfile -s ${prefix}_mnfd${percentage}.txt -p ${prefix}_m
 
