@@ -19,10 +19,10 @@ Options | Details
  rateoutput | The name of the rate comparison file
  percentage | The percentage of sites to filter
  alignment | The original multiple sequence alignment
- finaloutput | The filename of the finaloutput
+ finaloutput | The filename for the finaloutput alignment file
 
 #### Output
-The two key output files are `{output_prefix}_lnfd.txt` and `{output_prefix}_mnfd.txt`. They contain the filtered alignments according to functional divergence scores. **L** and **M** stands for the least and most divergent sites respectively. 
+The key output file is `{finaloutput}`. They contain the filtered alignments according to functional divergence scores. **L** and **M** stands for the least and most divergent sites respectively. 
 
 If the input for {percentage} is 40, then 40% of the sites will end up in `{output_prefix}_lnfd.txt`, and 60% in `{output_prefix}_mnfd.txt`. 
 
