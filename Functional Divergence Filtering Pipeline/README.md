@@ -18,6 +18,11 @@ for seperating the most (m) and least (l) divergent sites according to user spec
 
 All options must be specified.
 
+Options | Details 
+--------|--------
+ input  | The original sequence alignment 
+ 
+
 ## Requirement:
 R - version 4.x
 Python - version 3.x
