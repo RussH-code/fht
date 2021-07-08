@@ -9,8 +9,8 @@ args = commandArgs(trailingOnly=TRUE)
 compositional_shift_filter <- function(file, percentage){
   
   data = suppressMessages(vroom(file))
-  output1 = paste0(str_split(file, "\\.")[[1]][1], "_cs_top", percentage, ".txt")   
-  output2 = paste0(str_split(file, "\\.")[[1]][1], "_cs_filtered", percentage, ".txt")
+  output1 = paste0(str_split(file, "\\.")[[1]][1], "_cs_bottom", percentage, ".txt")   
+  output2 = paste0(str_split(file, "\\.")[[1]][1], "_cs_top", percentage, ".txt")
   
   data <- data[with(data, order(ProfileDist)), ]
   

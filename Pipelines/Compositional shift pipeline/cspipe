@@ -28,6 +28,9 @@ Rscript extract_sites.R ${freqoutput}.profiledist $percentage
 echo ""
 echo "-------------------------"
 echo "Filtering Top Compositional shift Sites"
-python3 compositional_shift_filter.py -i $alignment -s ${freqoutput}_cs_filtered${percentage}.txt -p $finaloutput
+python3 compositional_shift_filter.py -i $alignment -s ${freqoutput}_cs_top${percentage}.txt -p ${finaloutput}_cs_bottom_${percentage}
+python3 compositional_shift_filter.py -i $alignment -s ${freqoutput}_cs_bottom${percentage}.txt -p ${finaloutput}_cs_top_${percentage}
+
+
 
 rm temp.fas
