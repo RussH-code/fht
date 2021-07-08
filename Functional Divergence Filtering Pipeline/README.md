@@ -28,8 +28,11 @@ Options | Details
  
 
 ## Requirement:
-R - version 4.x
-Python - version 3.x
+1. R - version 4.x
+2. Python - version 3.x
 
 ## Python Packages Needed:
 Pandas, numpy, BioPython
+
+## R packages Needed:
+vroom, stringr, tidyverse
