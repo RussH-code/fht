@@ -22,10 +22,14 @@ Options | Details
 --------|--------
  input  | The original sequence alignment 
  output prefix | The string to prefix to output files
- percentage | The % of sites to filter 
+ percentage | The % of sites to filter (see output section)
  first group | Filename of the 1st group of organisms, one species per line
  second group | Filename of the 2nd group of organisms, one species per line
- 
+
+#### Output
+The two key output files are `{output_prefix}_lnfd.txt` and `{output_prefix}_mnfd.txt`. They contain the filtered alignments according to functional divergence scores. **L** and **M** stands for the least and most divergent sites respectively. 
+
+If the input for {percentage} is 40, then 40% of the sites will end up in `{output_prefix}_lnfd.txt`, and 60% in `{output_prefix}_mnfd.txt`. 
 
 ## Requirement:
 1. R - version 4.x
