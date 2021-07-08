@@ -1,15 +1,16 @@
 # Site Rate Shift 
 
 The Site Rate Shift pipeline is used for identifying and filtering sites that have experienced changes in evolutionary rates.
-The pipeline takes as input a MSA, two grouping files with the names of the species in the two groups, and the percentage of most divergent sites to filter out. 
+The pipeline takes as input a MSA, two rate files with the evolutionary rates of sites in two groups of organisms, and the percentage of sites to filter out. 
 
 ## Usage:
 
 ./srpipe -f {firstrate} -s {secondrate} -o {rateoutput} -p {percentage} -a {alignment} -u {finalouput}
 
-for seperating the most (m) and least (l) divergent sites according to user specified percentages.
-
 All options must be specified.
+
+## Input:
+The rate files can be prepared by running iqtree on two groups of organisms on the same sites with `--rate` options to infer the site-specific rates. For details, take a look at Section **Inferring Site-Specific Rate** on http://www.iqtree.org/doc/Advanced-Tutorial 
 
 Options | Details 
 --------|--------
