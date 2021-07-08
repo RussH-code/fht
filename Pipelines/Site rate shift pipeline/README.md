@@ -22,9 +22,9 @@ Options | Details
  finaloutput | The filename for the finaloutput alignment file
 
 #### Output
-The key output file is `{finaloutput}`. It contains the sites that have the experienced the least amount of site rate shift.
+The two key output files are `{finaloutput}_rs_top{percentage}.phy` and `{finaloutput}_rs_bottom{percentage}.phy`, which contains the sites that have experienced the most and least amount of rate shifts. 
 
-If the input for {percentage} is 40, then 40% of the sites will end up in `{output_prefix}_lnfd.txt`, and 60% in `{output_prefix}_mnfd.txt`. 
+If the input for {percentage} is 40, then 40% of the sites will end up in `{finaloutput}_rs_bottom{percentage}.phy`, and 60% in `{finaloutput}_rs_top{percentage}.phy`. 
 
 ## Requirement:
 1. R - version 4.x
