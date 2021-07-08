@@ -1,1 +1,0 @@
-./cs_wrapper -f {first site freq} -s {second site freq} -o {site_freq output} -p {filter percentage} -a {alignment} -u {name of final output}
