@@ -15,7 +15,7 @@ The site frequency files can be prepared by running iqtree on two groups of orga
 Options | Details 
 --------|--------
  first site freq  | Site-specific frequency for first group of organisms
- secondrate | Site-specific frequency for second group of organisms
+ second site freq | Site-specific frequency for second group of organisms
  freq output | The name of the frequency comparison file in output
  percentage | The percentage of sites to filter
  alignment | The original multiple sequence alignment in phylip format
