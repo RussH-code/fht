@@ -20,7 +20,7 @@ All options must be specified.
 
 Options | Details 
 --------|--------
- input  | The original sequence alignment 
+ input  | The original sequence alignment in phylip format
  output prefix | The string to prefix to output files
  percentage | The % of sites to filter (see output section)
  first group | Filename of the 1st group of organisms, one species per line
