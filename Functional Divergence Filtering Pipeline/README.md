@@ -16,6 +16,7 @@ Residues Determining Protein Functional Specificity. Bioinformatics,
 
 for seperating the most (m) and least (l) divergent sites according to user specified percentages.
 
+All options must be specified.
 
 ## Requirement:
 R - version 4.x
