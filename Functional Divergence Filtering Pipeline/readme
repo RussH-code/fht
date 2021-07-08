@@ -15,3 +15,9 @@ Usage:
 for seperating the most (m) and least (l) divergent sites according to user specified percentages.
 
 
+Requirement:
+R - version 4.x
+Python - version 3.x
+
+Python Packages Needed:
+Pandas, numpy, BioPython
