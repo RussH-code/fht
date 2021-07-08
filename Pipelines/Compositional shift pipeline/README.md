@@ -24,7 +24,7 @@ Options | Details
 #### Output
 The two key output files are `{finaloutput}_cs_top{percentage}.phy` and `{finaloutput}_cs_bottom{percentage}.phy`, which contains the sites that have experienced the most and least amount of compositional shifts. 
 
-If the input for {percentage} is 40, then 40% of the sites will end up in `{finaloutput}_rs_bottom{percentage}.phy`, and 60% in `{finaloutput}_rs_top{percentage}.phy`. 
+If the input for {percentage} is 40, then 40% of the sites will end up in `{finaloutput}_cs_bottom{percentage}.phy`, and 60% in `{finaloutput}_cs_top{percentage}.phy`. 
 
 ## Requirement:
 1. R - version 4.x
