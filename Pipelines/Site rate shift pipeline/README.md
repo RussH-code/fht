@@ -18,7 +18,7 @@ Options | Details
  secondrate | Site-specific rate for second group of organisms
  rateoutput | The name of the rate comparison file
  percentage | The percentage of sites to filter
- alignment | The original multiple sequence alignment
+ alignment | The original multiple sequence alignment in phylip format
  finaloutput | The filename for the finaloutput alignment file
 
 #### Output
