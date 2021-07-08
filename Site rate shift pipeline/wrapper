@@ -1,0 +1,32 @@
+#!/bin/bash
+
+while getopts f:s:o:p:a:u: flag
+do
+    case "${flag}" in
+	f) firstrate=${OPTARG};;
+	s) secondrate=${OPTARG};;
+	o) rateoutput=${OPTARG};;
+	p) percentage=${OPTARG};;
+	a) alignment=${OPTARG};;
+	u) finaloutput=${OPTARG};;
+    esac
+done
+
+module load lang/r/4.0.3-bioconductor-gcc
+module load lang/python/anaconda/3.8.5-2021-AM
+
+echo ""
+echo "-------------------------"
+echo "Calculating Site Rate Shift"
+python3 site_rate_shift.py -a $firstrate -b $secondrate -o $rateoutput
+
+echo "-------------------------"
+echo "Getting Rate Shift Sites"
+Rscript extract_sites.R $rateoutput $percentage
+
+echo ""
+echo "-------------------------"
+echo "Filtering Rate Shift Sites"
+python3 rate_shift_filter.py -i $alignment -s ${rateoutput}_rs_filtered${percentage}.txt -p $finaloutput
+
+rm temp.fas

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+while getopts f:s:o:p:a:u: flag
+do
+    case "${flag}" in
+	f) firstsitefreq=${OPTARG};;
+	s) secondsitefreq=${OPTARG};;
+	o) freqoutput=${OPTARG};;
+	p) percentage=${OPTARG};;
+	a) alignment=${OPTARG};;
+	u) finaloutput=${OPTARG};;
+    esac
+done
+
+module load lang/r/4.0.3-bioconductor-gcc
+module load lang/python/anaconda/3.8.5-2021-AM
+
+echo ""
+echo "-------------------------"
+echo "Calculating Compositional Shift"
+python3 calculate_profile_distance.py $firstsitefreq $secondsitefreq $freqoutput
+echo "Compositional Shift written to "${freqoutput}.profiledist 
+
+echo "-------------------------"
+echo "Getting Compositional shift Sites"
+Rscript extract_sites.R ${freqoutput}.profiledist $percentage
+
+echo ""
+echo "-------------------------"
+echo "Filtering Top Compositional shift Sites"
+python3 compositional_shift_filter.py -i $alignment -s ${freqoutput}_cs_filtered${percentage}.txt -p $finaloutput
+
+rm temp.fas
