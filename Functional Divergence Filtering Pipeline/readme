@@ -12,6 +12,6 @@ Usage:
 
 ./gspipe -i {input} -p {output prefix}  -n {percentage} -f {first group} -s {second group}
 
-for seperating the most and least divergent sites according to user specified percentages.
+for seperating the most (m) and least (l) divergent sites according to user specified percentages.
 
 
