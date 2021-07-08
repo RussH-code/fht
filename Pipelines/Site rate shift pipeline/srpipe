@@ -27,7 +27,7 @@ Rscript extract_sites.R $rateoutput $percentage
 echo ""
 echo "-------------------------"
 echo "Filtering Rate Shift Sites"
-python3 rate_shift_filter.py -i $alignment -s ${rateoutput}_rs_top${percentage}.txt -p ${finaloutput}_rs_top
-python3 rate_shift_filter.py -i $alignment -s ${rateoutput}_rs_bottom${percentage}.txt -p ${finaloutput}_rs_bottom
+python3 rate_shift_filter.py -i $alignment -s ${rateoutput}_rs_top${percentage}.txt -p ${finaloutput}_rs_top_${percentage}
+python3 rate_shift_filter.py -i $alignment -s ${rateoutput}_rs_bottom${percentage}.txt -p ${finaloutput}_rs_bottom_${percentage}
 
 rm temp.fas
