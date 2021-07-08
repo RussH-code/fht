@@ -14,11 +14,12 @@ The rate files can be prepared by running iqtree on two groups of organisms on t
 
 Options | Details 
 --------|--------
- input  | The original sequence alignment 
- output prefix | The string to prefix to output files
- percentage | The % of sites to filter (see output section)
- first group | Filename of the 1st group of organisms, one species per line
- second group | Filename of the 2nd group of organisms, one species per line
+ firstrate  | Site-specific rate for first group of organisms
+ secondrate | Site-specific rate for second group of organisms
+ rateoutput | The name of the rate comparison file
+ percentage | The percentage of sites to filter
+ alignment | The original multiple sequence alignment
+ finaloutput | The filename of the finaloutput
 
 #### Output
 The two key output files are `{output_prefix}_lnfd.txt` and `{output_prefix}_mnfd.txt`. They contain the filtered alignments according to functional divergence scores. **L** and **M** stands for the least and most divergent sites respectively. 
